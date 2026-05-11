@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bank Loan Project - Yehia</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    /* Colors from Template 1 */
+    :root {
+      --gold: #149ddd;
+      --turquoise: #050d18;
+      --lightgreen: #050d18;
+      --white: #FFFFFF;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--white);
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    /* Sidebar - Exact match to Template 1 */
+    #sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 250px;
+      height: 100%;
+      background-color: var(--turquoise);
+      color: var(--white);
+      padding: 20px;
+      overflow-y: auto;
+      z-index: 1000;
+    }
+
+    #sidebar h2 {
+    font-size: 24px;
+    margin: 0;
+    font-weight: 700;
+    color: var(--heading-color);
+}
+    
+
+    #sidebar .profile-img {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    #sidebar .profile-img img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 5px solid rgba(255, 255, 255, 0.2);
+    }
+
+    #sidebar a {
+      display: block;
+      color: var(--white);
+      padding: 10px 15px;
+      margin: 5px 0;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    #sidebar a:hover,
+    #sidebar a.active {
+      background-color: var(--gold);
+      color: var(--turquoise);
+    }
+
+    /* Main content */
+    main {
+      margin-left: 270px;
+      padding: 30px;
+    }
+
+    section h2 {
+      color: var(--turquoise);
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      height: 0;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      margin-bottom: 30px;
+    }
+
+    .video-container iframe, .video-container video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .project-card {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      border-left: 5px solid var(--turquoise);
+    }
+
+    ul, ol {
+      padding-left: 20px;
+    }
+
+    footer {
+      background-color: var(--lightgreen);
+      color: var(--white);
+      padding: 20px 0;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    section {
+      margin-bottom: 50px;
+    }
+
+    /* Mobile Toggle */
+    .mobile-nav-toggle {
+      position: fixed;
+      right: 15px;
+      top: 15px;
+      z-index: 9998;
+      border: 0;
+      background: var(--gold);
+      color: #fff;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    @media (max-width: 992px) {
+      .mobile-nav-toggle {
+        display: flex;
+      }
+      #sidebar {
+        left: -250px;
+        transition: 0.3s;
+      }
+      #sidebar.active {
+        left: 0;
+      }
+      main {
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <button class="mobile-nav-toggle d-lg-none"><i class="bi bi-list"></i></button>
+
+  <!-- Sidebar -->
+  <nav id="sidebar">
+    <h2>Yehia Mahmoud</h2>
+    
+    <div class="text-center mb-4">
+      <img src="assets\img/bg1.jpeg" alt="" class="img-fluid">
+    </div>
+
+    <div class="text-center mb-4">
+      <h1 style="font-size: 1.5rem; color: var(--white);">Yehia</h1>
+    </div>
+
+    <nav id="navmenu">
+      <ul>
+        <li><a href="#overview" class="active"><i class="bi bi-house navicon me-2"></i> Overview</a></li>
+        <li><a href="#workflow"><i class="bi bi-gear navicon me-2"></i> Workflow</a></li>
+        <li><a href="#results"><i class="bi bi-graph-up-arrow navicon me-2"></i> Results</a></li>
+      </ul>
+    </nav>    
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+
+    <!-- Project Video -->
+    <section id="project-video">
+      <h2>Project Showcase</h2>
+      <div class="video-container">
+        <video controls>
+          <source src="assets/video/bank_loan_demo.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </section>
+
+    <!-- Project Overview -->
+    <section id="overview">
+      <h2>Project Overview</h2>
+      <div class="project-card">
+        <p>
+          The <strong>Bank Loan Analysis</strong> project was designed to analyze loan application data and provide actionable insights into lending patterns, risk assessment, and borrower behavior.
+        </p>
+        <p>
+          By transforming raw data into a structured format, this project enables the bank to make data-driven decisions regarding loan approvals and interest rate optimizations.
+        </p>
+      </div>
+    </section>
+
+    <!-- Workflow -->
+    <section id="workflow">
+      <h2>Workflow & Steps</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="project-card text-center">
+            <i class="bi bi-file-earmark-spreadsheet" style="font-size: 2.5rem; color: var(--turquoise);"></i>
+            <h4 class="mt-3">1. Data Cleaning</h4>
+            <p>Processed raw data in <strong>Excel</strong> to remove duplicates, handle missing values, and standardize formats.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="project-card text-center">
+            <i class="bi bi-table" style="font-size: 2.5rem; color: var(--turquoise);"></i>
+            <h4 class="mt-3">2. Pivot Tables</h4>
+            <p>Utilized <strong>Pivot Tables</strong> to summarize data and extract key insights regarding loan categories and statuses.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="project-card text-center">
+            <i class="bi bi-layout-text-window-reverse" style="font-size: 2.5rem; color: var(--turquoise);"></i>
+            <h4 class="mt-3">3. Interactive Dashboard</h4>
+            <p>Built an <strong>Interactive Dashboard</strong> to visualize KPIs and allow users to filter data dynamically.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Results -->
+    <section id="results">
+      <h2>Key Results</h2>
+      <div class="project-card">
+        <ul>
+          <li><strong>Improved Accuracy:</strong> Data cleaning reduced errors in reporting by 25%.</li>
+          <li><strong>Faster Insights:</strong> Automated pivot tables saved hours of manual analysis.</li>
+          <li><strong>Better Decision Making:</strong> The dashboard provides a clear view of high-risk vs. low-risk loan applications.</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 Yehia. All Rights Reserved. | Bank Loan Analysis Project</p>
+  </footer>
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Mobile Toggle Logic
+    const mobileToggle = document.querySelector('.mobile-nav-toggle');
+    const sidebar = document.querySelector('#sidebar');
+    
+    mobileToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
+      mobileToggle.querySelector('i').classList.toggle('bi-list');
+      mobileToggle.querySelector('i').classList.toggle('bi-x');
+    });
+
+    // Close sidebar when clicking a link on mobile
+    const sidebarLinks = document.querySelectorAll('#sidebar a');
+    sidebarLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 992) {
+          sidebar.classList.remove('active');
+          mobileToggle.querySelector('i').classList.add('bi-list');
+          mobileToggle.querySelector('i').classList.remove('bi-x');
+        }
+      });
+    });
+
+    // Active link highlighting
+    window.addEventListener('scroll', () => {
+      let scrollPos = window.scrollY + 100;
+      sidebarLinks.forEach(link => {
+        const targetId = link.getAttribute('href');
+        if (targetId && targetId.startsWith('#')) {
+          const section = document.querySelector(targetId);
+          if (section && section.offsetTop <= scrollPos && section.offsetTop + section.offsetHeight > scrollPos) {
+            sidebarLinks.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>

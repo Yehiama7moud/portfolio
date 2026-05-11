@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yehia - Power BI Project</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Swiper CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    /* Colors */
+    :root {
+      --gold: #149ddd;
+      --turquoise: #050d18;
+      --lightgreen: #050d18;
+      --white: #FFFFFF;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--white);
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    /* Sidebar */
+    #sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 250px;
+      height: 100%;
+      background-color: var(--turquoise);
+      color: var(--white);
+      padding: 20px;
+      overflow-y: auto;
+      z-index: 1000;
+    }
+
+     #sidebar h2 {
+    font-size: 24px;
+    margin: 0;
+    font-weight: 700;
+    color: var(--heading-color);
+}
+    
+
+    #sidebar a {
+      display: block;
+      color: var(--white);
+      padding: 10px 15px;
+      margin: 5px 0;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    #sidebar a:hover,
+    #sidebar a.active {
+      background-color: var(--gold);
+      color: var(--turquoise);
+    }
+
+    /* Main content */
+    main {
+      margin-left: 270px;
+      padding: 30px;
+    }
+
+    section h2 {
+      color: var(--turquoise);
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    .portfolio-slider img {
+      width: 100%;
+      max-width: 1000px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      display: block;
+      margin: 0 auto;
+    }
+
+    ul, ol {
+      padding-left: 20px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-box {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 10px;
+      border-left: 5px solid var(--turquoise);
+    }
+
+    .skill-box h4 {
+      color: var(--turquoise);
+      font-size: 1.1rem;
+    }
+
+    footer {
+      background-color: var(--lightgreen);
+      color: var(--white);
+      padding: 20px 0;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    section {
+      margin-bottom: 50px;
+    }
+
+    /* Mobile Toggle */
+    .mobile-nav-toggle {
+      position: fixed;
+      right: 15px;
+      top: 15px;
+      z-index: 9998;
+      border: 0;
+      background: var(--gold);
+      color: #fff;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    @media (max-width: 992px) {
+      .mobile-nav-toggle {
+        display: flex;
+      }
+      #sidebar {
+        left: -250px;
+        transition: 0.3s;
+      }
+      #sidebar.active {
+        left: 0;
+      }
+      main {
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <button class="mobile-nav-toggle d-lg-none"><i class="bi bi-list"></i></button>
+
+  <!-- Sidebar -->
+  <nav id="sidebar">
+    <h2>Yehia Mahmoud</h2>
+    
+    <div class="text-center mb-4">
+      <img src="assets\img/bg1.jpeg" alt="" class="img-fluid">
+    </div>
+
+    <nav id="navmenu">
+      <ul>
+        <li><a href="#project-info" class="active"><i class="bi bi-info-circle me-2"></i> Project Info</a></li>
+        <li><a href="#project-overview"><i class="bi bi-eye me-2"></i> Overview</a></li>
+        <li><a href="#skills"><i class="bi bi-tools me-2"></i> Skills & Tools</a></li>
+        <li><a href="#recommendations"><i class="bi bi-list-check me-2"></i> Recommendations</a></li>
+      </ul>
+    </nav>    
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+
+    <!-- Project Info -->
+    <section id="project-info">
+      <h2>Project Information</h2>
+      <ul>
+        <li><strong>Category:</strong> Data Analysis & Visualization</li>
+        <li><strong>Client:</strong> Internal Project / Database Management</li>
+        <li><strong>Tools & Technologies:</strong> Power BI, Power Query, ODBC, SQL Database</li>
+        <li><strong>Role:</strong> Data Analyst / BI Developer</li>
+      </ul>
+    </section>
+
+    <!-- Image Slider (Placeholders) -->
+   <section class="portfolio-slider">
+  
+  <div class="swiper mySwiper">
+
+    <div class="swiper-wrapper">
+
+      <div class="swiper-slide">
+        <div class="text-center p-3 bg-light rounded">
+          <img src="/portfolio-7-main/assets/img/mylers1.jpeg" alt="Project 1">
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="text-center p-3 bg-light rounded">
+          <img src="/portfolio-7-main/assets/img/mylers2.jpeg" alt="Project 2">
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="text-center p-3 bg-light rounded">
+          <img src="/portfolio-7-main/assets/img/mylers3.jpeg" alt="Project 3">
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="text-center p-3 bg-light rounded">
+          <img src="/portfolio-7-main/assets/img/mylers4.jpeg" alt="Project 4">
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="text-center p-3 bg-light rounded">
+          <img src="/portfolio-7-main/assets/img/mylers5.jpeg" alt="Project 5">
+        </div>
+      </div>
+
+    </div>
+
+    <div class="swiper-pagination"></div>
+
+  </div>
+
+</section>
+    <!-- Project Overview -->
+    <section id="project-overview">
+      <h2>Project Overview</h2>
+      <p>
+        This project focuses on building a robust data pipeline and interactive dashboard using <strong>Power BI</strong>. The primary objective was to establish a seamless connection to a live <strong>Database</strong> through <strong>ODBC</strong>, ensuring that the data remains up-to-date and reliable for decision-making.
+      </p>
+      <p>
+        A significant part of the workflow involved using <strong>Power Query</strong> to perform extensive data cleaning and transformation. This included handling null values, standardizing data formats, and merging multiple tables to create a unified data model optimized for performance and clarity.
+      </p>
+      <p>
+        The final outcome is a comprehensive Power BI report that provides actionable insights, allowing stakeholders to monitor key performance indicators (KPIs) and trends in real-time.
+      </p>
+    </section>
+
+    <!-- Skills & Tools -->
+    <section id="skills">
+       <h2>Skills & Tools</h2>
+       <div class="skills-grid">
+          <div class="skill-box">
+            <h4>Power BI</h4>
+            <p>Creating interactive dashboards, data modeling, and DAX calculations.</p>
+          </div>
+          <div class="skill-box">
+            <h4>Power Query</h4>
+            <p>Advanced data cleaning, ETL processes, and data transformation.</p>
+          </div>
+          <div class="skill-box">
+            <h4>ODBC Connection</h4>
+            <p>Connecting Power BI to external databases for real-time data retrieval.</p>
+          </div>
+          <div class="skill-box">
+            <h4>Database Management</h4>
+            <p>Understanding database structures and optimizing queries for reporting.</p>
+          </div>
+          <div class="skill-box">
+            <h4>Data Visualization</h4>
+            <p>Designing clear and effective charts to communicate complex data insights.</p>
+          </div>
+          <div class="skill-box">
+            <h4>Data Cleaning</h4>
+            <p>Ensuring data integrity by removing duplicates and fixing inconsistencies.</p>
+          </div>
+       </div>
+    </section>
+
+    <!-- Recommendations -->
+    <section id="recommendations">
+      <h2>Recommendations</h2>
+      <ol>
+        <li>Maintain the ODBC connection with proper security protocols to ensure data safety.</li>
+        <li>Regularly audit the Power Query steps to optimize refresh times as the database grows.</li>
+        <li>Implement incremental refresh in Power BI for large datasets to improve performance.</li>
+        <li>Document the data dictionary and transformation logic for future maintenance.</li>
+        <li>Gather user feedback periodically to refine dashboard visuals and usability.</li>
+      </ol>
+    </section>
+
+    <!-- Stats -->
+    <section id="stats" class="text-center">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="stats-item">
+            <i class="bi bi-database-fill-check" style="font-size: 2rem; color: var(--turquoise);"></i>
+            <h3>100%</h3>
+            <p>Data Accuracy</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="stats-item">
+            <i class="bi bi-lightning-fill" style="font-size: 2rem; color: var(--turquoise);"></i>
+            <h3>Real-time</h3>
+            <p>Data Connection</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="stats-item">
+            <i class="bi bi-check-circle-fill" style="font-size: 2rem; color: var(--turquoise);"></i>
+            <h3>Automated</h3>
+            <p>Reporting Workflow</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 Yehia. All Rights Reserved. | Inspired by Mersal Charity Template</p>
+  </footer>
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      loop: true,
+      autoplay: { delay: 4000 },
+      pagination: { el: ".swiper-pagination", clickable: true },
+      slidesPerView: 1,
+    });
+
+    // Mobile Toggle Logic
+    const mobileToggle = document.querySelector('.mobile-nav-toggle');
+    const sidebar = document.querySelector('#sidebar');
+    
+    mobileToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
+      mobileToggle.querySelector('i').classList.toggle('bi-list');
+      mobileToggle.querySelector('i').classList.toggle('bi-x');
+    });
+
+    // Close sidebar when clicking a link on mobile
+    const sidebarLinks = document.querySelectorAll('#sidebar a');
+    sidebarLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 992) {
+          sidebar.classList.remove('active');
+          mobileToggle.querySelector('i').classList.add('bi-list');
+          mobileToggle.querySelector('i').classList.remove('bi-x');
+        }
+      });
+    });
+
+    // Active link highlighting
+    window.addEventListener('scroll', () => {
+      let scrollPos = window.scrollY + 100;
+      sidebarLinks.forEach(link => {
+        const targetId = link.getAttribute('href');
+        if (targetId && targetId.startsWith('#')) {
+          const section = document.querySelector(targetId);
+          if (section && section.offsetTop <= scrollPos && section.offsetTop + section.offsetHeight > scrollPos) {
+            sidebarLinks.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>

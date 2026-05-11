@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-commerce Project - Yehia</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    /* Colors from Template */
+    :root {
+      --gold: #149ddd;
+      --turquoise: #050d18;
+      --lightgreen: #050d18;
+      --white: #FFFFFF;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--white);
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    /* Sidebar */
+    #sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 250px;
+      height: 100%;
+      background-color: var(--turquoise);
+      color: var(--white);
+      padding: 20px;
+      overflow-y: auto;
+      z-index: 1000;
+    }
+
+    #sidebar h2 {
+      font-size: 24px;
+      margin: 0;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    #sidebar .profile-img {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    #sidebar .profile-img img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 5px solid rgba(255, 255, 255, 0.2);
+    }
+
+    #sidebar a {
+      display: block;
+      color: var(--white);
+      padding: 10px 15px;
+      margin: 5px 0;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    #sidebar a:hover,
+    #sidebar a.active {
+      background-color: var(--gold);
+      color: var(--white);
+    }
+
+    /* Main content */
+    main {
+      margin-left: 270px;
+      padding: 30px;
+    }
+
+    section h2 {
+      color: var(--turquoise);
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      height: 0;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      margin-bottom: 30px;
+    }
+
+    .video-container iframe, .video-container video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .project-card {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      border-left: 5px solid var(--turquoise);
+    }
+
+    ul, ol {
+      padding-left: 20px;
+    }
+
+    footer {
+      background-color: var(--lightgreen);
+      color: var(--white);
+      padding: 20px 0;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    section {
+      margin-bottom: 50px;
+    }
+
+    /* Mobile Toggle */
+    .mobile-nav-toggle {
+      position: fixed;
+      right: 15px;
+      top: 15px;
+      z-index: 9998;
+      border: 0;
+      background: var(--gold);
+      color: #fff;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    @media (max-width: 992px) {
+      .mobile-nav-toggle {
+        display: flex;
+      }
+      #sidebar {
+        left: -250px;
+        transition: 0.3s;
+      }
+      #sidebar.active {
+        left: 0;
+      }
+      main {
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <button class="mobile-nav-toggle d-lg-none"><i class="bi bi-list"></i></button>
+
+  <!-- Sidebar -->
+  <nav id="sidebar">
+    <h2>Yehia Mahmoud</h2>
+    
+    <div class="text-center mb-4 mt-4">
+      <img src="assets\img/bg1.jpeg" alt="" class="img-fluid">
+    </div>
+
+    <div class="text-center mb-4">
+      <h1 style="font-size: 1.5rem; color: var(--white);">Yehia</h1>
+    </div>
+
+    <nav id="navmenu">
+      <ul class="list-unstyled">
+        <li><a href="#overview" class="active"><i class="bi bi-house navicon me-2"></i> Overview</a></li>
+        <li><a href="#workflow"><i class="bi bi-gear navicon me-2"></i> Workflow</a></li>
+        <li><a href="#modeling"><i class="bi bi-diagram-3 navicon me-2"></i> Modeling</a></li>
+        <li><a href="#dashboard"><i class="bi bi-layout-text-window-reverse navicon me-2"></i> Dashboard</a></li>
+      </ul>
+    </nav>    
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+
+    <!-- Project Video -->
+    <section id="project-video">
+      <h2>Project Showcase</h2>
+      <div class="video-container">
+        <video controls>
+          <source src="assets/video/ecommerce_demo.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </section>
+
+    <!-- Project Overview -->
+    <section id="overview">
+       
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Project Overview</h2>
+       
+      </div>
+      
+      <div class="project-card">
+        <p>
+          The <strong>E-commerce Real Data Analysis</strong> project is a comprehensive end-to-end business intelligence solution designed to analyze sales performance, customer behavior, and product trends using real-world e-commerce data.
+        </p>
+        <p>
+          By leveraging advanced data transformation and modeling techniques, this project provides actionable insights that help businesses optimize their sales funnel and increase overall profitability.
+        </p>
+      </div>
+    </section>
+
+    <!-- Workflow -->
+    <section id="workflow">
+      <h2>Workflow & Technical Steps</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="project-card">
+            <i class="bi bi-filter-square" style="font-size: 2rem; color: var(--gold);"></i>
+            <h4 class="mt-3">1. Data Cleaning (Power Query)</h4>
+            <p>Utilized <strong>Power Query</strong> to perform ETL (Extract, Transform, Load) processes, ensuring data quality by handling nulls, standardizing types, and merging multiple data sources.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="project-card">
+            <i class="bi bi-calculator" style="font-size: 2rem; color: var(--gold);"></i>
+            <h4 class="mt-3">2. Measures by DAX</h4>
+            <p>Developed complex <strong>DAX Measures</strong> to calculate key business metrics such as Year-over-Year growth, Customer Lifetime Value (CLV), and moving averages.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modeling Section -->
+    <section id="modeling">
+      <h2>Data Modeling</h2>
+      <div class="project-card">
+        <div class="row align-items-center">
+          <div class="col-md-8">
+            <h4>Star Schema Architecture</h4>
+            <p>
+              Implemented a robust <strong>Star Schema</strong> to optimize query performance and ensure scalability. This involved:
+            </p>
+            <ul>
+              <li>Defining <strong>Fact Tables</strong> for sales and transactions.</li>
+              <li>Creating <strong>Dimension Tables</strong> for Products, Customers, Dates, and Geography.</li>
+              <li>Establishing efficient one-to-many relationships to streamline data filtering.</li>
+            </ul>
+          </div>
+          <div class="col-md-4 text-center">
+            <i class="bi bi-diagram-3-fill" style="font-size: 5rem; color: var(--turquoise);"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section id="dashboard">
+      <h2>Interactive Dashboard & Visualization</h2>
+      <div class="project-card">
+        <p>
+          The final <strong>Interactive Dashboard</strong> provides a 360-degree view of the business, featuring:
+        </p>
+        <div class="row">
+          <div class="col-md-6">
+            <ul>
+              <li><strong>Dynamic Interactivity:</strong> Cross-filtering and drill-through capabilities for deep analysis.</li>
+              <li><strong>Custom HTML Visuals:</strong> Integrated <strong>Custom HTML Visuals</strong> to provide unique, high-end data representations not available in standard charts.</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <ul>
+              <li><strong>KPI Scorecards:</strong> Instant visibility into Total Sales, Profit Margins, and Order Volume.</li>
+              <li><strong>Trend Analysis:</strong> Visualizing sales cycles and seasonal peaks to guide inventory management.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 Yehia Mahmoud. All Rights Reserved. | E-commerce Real Data Analysis Project</p>
+  </footer>
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Mobile Toggle Logic
+    const mobileToggle = document.querySelector('.mobile-nav-toggle');
+    const sidebar = document.querySelector('#sidebar');
+    
+    mobileToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
+      mobileToggle.querySelector('i').classList.toggle('bi-list');
+      mobileToggle.querySelector('i').classList.toggle('bi-x');
+    });
+
+    // Close sidebar when clicking a link on mobile
+    const sidebarLinks = document.querySelectorAll('#sidebar a');
+    sidebarLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 992) {
+          sidebar.classList.remove('active');
+          mobileToggle.querySelector('i').classList.add('bi-list');
+          mobileToggle.querySelector('i').classList.remove('bi-x');
+        }
+      });
+    });
+
+    // Active link highlighting
+    window.addEventListener('scroll', () => {
+      let scrollPos = window.scrollY + 100;
+      sidebarLinks.forEach(link => {
+        const targetId = link.getAttribute('href');
+        if (targetId && targetId.startsWith('#')) {
+          const section = document.querySelector(targetId);
+          if (section && section.offsetTop <= scrollPos && section.offsetTop + section.offsetHeight > scrollPos) {
+            sidebarLinks.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
